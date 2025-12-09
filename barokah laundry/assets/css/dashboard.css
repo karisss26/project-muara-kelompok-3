@@ -1,0 +1,278 @@
+/* Dashboard Styles */
+#wrapper {
+    overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+.list-group-item.active {
+    background-color: #F8BBD0;
+    border-color: #F8BBD0;
+    color: #ffffff;
+}
+.list-group-item.active a {
+    color: #ffffff;
+}
+
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
+
+/* Dashboard cards */
+.dashboard-stat-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(253, 199, 212, 0.4);
+    transition: transform 0.3s;
+    margin-bottom: 20px;
+}
+
+.dashboard-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(247, 200, 211, 0.6);
+}
+
+.dashboard-stat-card .card-body {
+    padding: 20px;
+}
+
+.dashboard-stat-card .stat-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.dashboard-stat-card .stat-count {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-stat-card .stat-label {
+    color: white; 
+    font-size: 14px;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced stat card styling (Mengubah warna keras) */
+.dashboard-stat-card.bg-pink-strong {
+    background-color: #F8BBD0 !important; /* Pastel Pink Primer */
+}
+
+.dashboard-stat-card.bg-success {
+    background-color: #A5D6A7 !important; /* Pastel Green */
+}
+
+.dashboard-stat-card.bg-info {
+    background-color: #80DEEA !important; /* Pastel Blue */
+}
+
+.dashboard-stat-card.bg-warning {
+    background-color: #FFF59D !important; /* Pastel Yellow */
+}
+
+.dashboard-stat-card.bg-danger {
+    background-color: #FFCDD2 !important; /* Pastel Red/Danger */
+}
+
+/* Fix for warning card text color */
+.dashboard-stat-card.bg-warning .stat-count,
+.dashboard-stat-card.bg-warning .stat-label {
+    color: #333; /* Mengubah teks menjadi gelap untuk latar belakang kuning muda */
+    text-shadow: none; 
+    font-weight: bold;
+}
+
+/* Order status badges */
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.status-pending {
+    background-color: #FFF59D; /* Pastel Yellow */
+    color: black;
+}
+
+.status-processing {
+    background-color: #F8BBD0; /* Pastel Pink Primer */
+    color: #333; /* Teks gelap */
+}
+
+.status-completed {
+    background-color: #A5D6A7; /* Pastel Green */
+    color: #333; /* Teks gelap */
+}
+
+.status-cancelled {
+    background-color: #FFCDD2; /* Pastel Red/Danger */
+    color: #333; /* Teks gelap */
+}
+
+/* Order timeline */
+.order-timeline {
+    position: relative;
+    padding-left: 45px;
+}
+
+.order-timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #dee2e6;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -45px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #dee2e6;
+    z-index: 1;
+}
+
+.timeline-marker.active {
+    background-color: #F8BBD0; /* Pastel Pink Primer */
+    border-color: #F8BBD0;
+    color: white;
+}
+
+.timeline-content {
+    background-color: #FCE4EC; /* Pale Pink (sangat terang) */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.timeline-date {
+    color: #6c757d;
+    font-size: 0.8rem;
+}
+
+/* Profile styles */
+.profile-header {
+    background-color: #FCE4EC; /* Pale Pink untuk header profil */
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(253, 199, 212, 0.2);
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 48px;
+    color: #F8BBD0; /* Pastel Pink Primer untuk ikon */
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.profile-email {
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+.profile-section {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.profile-section-title {
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard-stat-card .stat-count {
+        font-size: 1.5rem;
+    }
+    
+    .order-timeline {
+        padding-left: 35px;
+    }
+    
+    .timeline-marker {
+        width: 24px;
+        height: 24px;
+        left: -35px;
+    }
+}
